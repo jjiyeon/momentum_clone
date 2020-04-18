@@ -17,6 +17,7 @@ function deleteToDo(event){
 }
 function saveToDos(){
     localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
+    // console.log(JSON.stringify(toDos));
 }
 function paintTodo(text){
     const li = document.createElement("li");
@@ -47,8 +48,8 @@ function loadToDos(){
     const loadedToDos = localStorage.getItem(TODOS_LS);
     if(loadedToDos !== null){
         const parsedToDos = JSON.parse(loadedToDos);
+        // console.log(parsedToDos);
         parsedToDos.forEach(element => {
-            console.log(element.text);
             paintTodo(element.text);
         });
     }
